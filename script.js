@@ -45,7 +45,7 @@ noBtn.addEventListener("click", () => {
 
 // 🎉 YES CLICKED — FINAL MODE
 yesBtn.addEventListener("click", () => {
-  title.textContent = "YIPPEEEE SHE SAID YES 💖";
+  title.textContent = "YIPPEEEE AMREETA JI Said Yessssss OMG 💖";
   catImg.src = "cat_dance.gif";
 
   letterWindow.classList.add("final");

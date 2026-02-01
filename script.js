@@ -1,4 +1,6 @@
-// Elements
+// =====================
+// ELEMENTS
+// =====================
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
 const letterWindow = document.querySelector(".letter-window");
@@ -11,8 +13,18 @@ const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
-// 💌 OPEN ENVELOPE
+const music = document.getElementById("bg-music"); // 🎵 music
+
+// =====================
+// OPEN ENVELOPE
+// =====================
 envelope.addEventListener("click", () => {
+  // play music after user interaction
+  if (music) {
+    music.volume = 0.6;
+    music.play().catch(() => {});
+  }
+
   envelope.style.opacity = "0";
   envelope.style.transform = "scale(0.8)";
 
@@ -26,7 +38,9 @@ envelope.addEventListener("click", () => {
   }, 300);
 });
 
-// 🏃 NO BUTTON RUNS AWAY (better movement)
+// =====================
+// NO BUTTON RUNS AWAY
+// =====================
 noBtn.addEventListener("mouseover", () => {
   const range = 250;
   const x = Math.random() * range - range / 2;
@@ -35,7 +49,9 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
-// 💪 YES BUTTON GROWS WHEN NO CLICKED
+// =====================
+// YES BUTTON GROWS
+// =====================
 let yesScale = 1;
 
 noBtn.addEventListener("click", () => {
@@ -43,7 +59,9 @@ noBtn.addEventListener("click", () => {
   yesBtn.style.transform = `scale(${yesScale})`;
 });
 
-// 🎉 YES CLICKED — FINAL MODE
+// =====================
+// YES CLICKED — FINAL MODE
+// =====================
 yesBtn.addEventListener("click", () => {
   title.textContent = "YIPPEEEE AMREETA JI Said Yessssss OMG 💖";
   catImg.src = "cat_dance.gif";
@@ -55,7 +73,9 @@ yesBtn.addEventListener("click", () => {
   launchConfetti();
 });
 
-// 🎊 CONFETTI FUNCTION
+// =====================
+// CONFETTI
+// =====================
 function launchConfetti() {
   for (let i = 0; i < 80; i++) {
     const confetti = document.createElement("div");
